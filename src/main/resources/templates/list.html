@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Student's Report Card</h2>
+        <div th:each="one : ${allstudents}">
+            <h3 th:inline="text">[[${one.firstName}]] [[${one.lastName}]]</h3>
+            <ul>
+                <th:block th:each="test : ${alltests}">
+                    <li th:inline="text">[[${test.subject}]]:[[${test.score}]]</li>
+                </th:block>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
